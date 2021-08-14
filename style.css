@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+}
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+header .logo {
+  text-decoration: none;
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+header .toggle {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: url("menu.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  cursor: pointer;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: #000;
+}
+.slider .imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  transition: 0.5s;
+  transition-delay: 0s;
+  z-index: 1;
+  clip-path: circle(0px at center);
+}
+.slider input[type="radio"]:checked + .imgBox {
+  z-index: 10;
+  clip-path: circle(1000px at center);
+  transition-delay: 0.49s;
+}
+.slider .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider .imgBox .content {
+  text-align: center;
+  position: relative;
+  max-width: 800px;
+}
+.slider .imgBox .content h2 {
+  font-size: 6em;
+  line-height: 1em;
+  color: #fff;
+}
+.slider .imgBox .content p {
+  font-size: 1.1em;
+  color: #fff;
+}
+.slider .imgBox .content a {
+  position: relative;
+  color: #111;
+  background: #fff;
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.slider input[type="radio"] {
+  margin: 5px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1000;
+  outline: none;
+}
+@media(max-width:768px){
+    header{
+        padding: 20px 40px;
+    }
+    .slider .imgBox{
+        padding: 40px;
+    }
+    .slider  .imgBox .content h2{
+        font-size: 3em;
+    }
+    .slider .imgBox .content p{
+        font-size: 1em;
+        margin-top: 10px;
+    } 
+}
